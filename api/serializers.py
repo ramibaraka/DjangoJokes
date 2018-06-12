@@ -8,4 +8,5 @@ class JokeSerializer(serializers.ModelSerializer):
             'content',
             'created_on',
             'pk',
+            'user',
         ]

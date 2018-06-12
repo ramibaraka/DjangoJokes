@@ -10,14 +10,15 @@ from serializers import JokeSerializer
 def ping(request):
     return HttpResponse('Ping !') 
 
-
-class JokeListView(generics.ListCreateAPIView):
+class JokeGenericView():
     queryset = Joke.objects.all()
     serializer_class = JokeSerializer
 
-class JokeDetailView(generics.RetrieveUpdateDestroyAPIView):
-    serializer_class = JokeSerializer
-    queryset = Joke.objects.all()
+class JokeListView(JokeGenericView, generics.ListCreateAPIView):
+    pass
+
+class JokeDetailView(JokeGenericView, generics.RetrieveUpdateDestroyAPIView):
+    pass
 
 
 
