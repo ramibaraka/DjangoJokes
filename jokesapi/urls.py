@@ -15,10 +15,14 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
+from rest_auth.views import (
+    LoginView, LogoutView, UserDetailsView, PasswordChangeView,
+    PasswordResetView, PasswordResetConfirmView
+)
 
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^api/', include('api.urls')),
-    url(r'^rest-auth/', include('rest_auth.urls'))
+    url(r'^login/$', LoginView.as_view(), name='rest_login'),
 ]

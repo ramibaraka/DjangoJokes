@@ -4,8 +4,8 @@ from django.views import generic
 from django.shortcuts import render
 from django.http import HttpResponse
 from rest_framework import generics
-from models import Joke
-from serializers import JokeSerializer
+from .models import Joke
+from .serializers import JokeSerializer
 
 def ping(request):
     return HttpResponse('Ping !') 
